@@ -1,3 +1,5 @@
+import os
+import sys
 from typing import Union
 import typing
 from matplotlib import pyplot as plt
@@ -6,6 +8,18 @@ from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 from PyQt5.QtWidgets import QWidget
 from PyQt5.QtGui import QIcon
+
+
+def resource_path(relative_path: str) -> str:
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    abs_path = os.path.join(base_path, relative_path).replace(os.sep, '/')
+    return abs_path
 
 
 class FigCanvas(FigureCanvas):
@@ -39,7 +53,7 @@ class FigCanvas(FigureCanvas):
     def set_plot_axis_visible(self, visible: bool) -> None:
         visible = 'on' if visible else 'off'
         self.plt.axis(visible)
-
+# 
     @typing.overload
     def set_fig_subplots_adjust(self, left: float, bottom: float, right: float,
                                 top: float, wspace: float, hspace: float) -> None:

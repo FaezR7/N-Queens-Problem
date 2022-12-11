@@ -1,5 +1,5 @@
 # N-Queens-Problem
-#### A GUI for n queens problem - Algorithm: backtracking
+#### A GUI for n queens problem
 ***
 
 ### What is N Queens Problem?

@@ -3,7 +3,7 @@ import sys
 from matplot_utils import FigCanvas, resource_path
 
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import (QApplication, QMainWindow, QPushButton,
+from PyQt5.QtWidgets import (QMainWindow, QPushButton,
                              QHBoxLayout, QVBoxLayout, QWidget,
                              QLabel, QSpinBox, QListWidget)
 from matplotlib import pyplot as plt

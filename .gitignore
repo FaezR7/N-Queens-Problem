@@ -1,0 +1,4 @@
+# temprory files - no need to share
+**/__pycache__/
+*.pyc
+*.pyo
